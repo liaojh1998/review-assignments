@@ -84,6 +84,6 @@ score: 6
     From a glance, Softplus generally matched Swish in performance for image classification tasks and PReLU and LReLU generally matched Swish in performance for translation tasks.
 
 ## TL;DR
-* Swish ($$x\cdot \sigma(\beta x))$$) can replace ReLU as activation functions in networks for slightly better performance.
+* Swish ($$x\cdot \sigma(\beta x)$$) can replace ReLU as activation functions in networks for slightly better performance.
 * Activation function search by using reinforcement learning to maximize validation accuracy.
 * Functions that perform well in smaller networks will generally perform well in larger networks as well. 
