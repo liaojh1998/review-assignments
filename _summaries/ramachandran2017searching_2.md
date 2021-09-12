@@ -46,7 +46,7 @@ score: 6
         
         Each found activation function is evaluated on a child network, which is computationally expensive. To speed up search, the authors used a distributed training scheme to parallelize the training of each child network on different functions. For each search algorithm update step, candidate activation functions are batched for distributed training and their validation accuracies were aggregated.
         
-        In particular, ResNet-20 ([He et al., 2016a](https://ieeexplore.ieee.org/document/7780459)) was used as the child network architecture. Each network was trained for 10 steps on the CIFAR-10 ([Krizhevsky & Hinton, 2009](https://www.cs.toronto.edu/~kriz/learning-features-2009-TR.pdf)) dataset by substituting each activation function instead of ReLU.
+        In particular, ResNet-20 ([He et al., 2016a](https://ieeexplore.ieee.org/document/7780459)) was used as the child network architecture. Each network was trained for 10k steps on the CIFAR-10 ([Krizhevsky & Hinton, 2009](https://www.cs.toronto.edu/~kriz/learning-features-2009-TR.pdf)) dataset by substituting each activation function instead of ReLU.
 
         The top performing functions were tested on larger networks, specifically ResNet-164 (RN) ([He et al., 2016b](https://arxiv.org/abs/1603.05027)), Wide ResNet 28-10 (WRN) ([Zagoruyko & Komodakis, 2016](http://www.bmva.org/bmvc/2016/papers/paper087/index.html)), and DenseNet 100-12 (DN) ([Huang et al., 2017](https://arxiv.org/abs/1608.06993)), again by replacing ReLU. The authors used the same hyperparameters described in each model.
 
@@ -84,6 +84,6 @@ score: 6
     From a glance, Softplus generally matched Swish in performance for image classification tasks and PReLU and LReLU generally matched Swish in performance for translation tasks.
 
 ## TL;DR
-* Swish ($$x\cdot \sigma(\beta x))$$) can replace ReLU as activation functions in networks for slightly better performance.
+* Swish ($$x\cdot \sigma(\beta x)$$) can replace ReLU as activation functions in networks for slightly better performance.
 * Activation function search by using reinforcement learning to maximize validation accuracy.
 * Functions that perform well in smaller networks will generally perform well in larger networks as well. 
